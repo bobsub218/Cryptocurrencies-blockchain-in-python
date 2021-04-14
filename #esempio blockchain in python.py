@@ -1,8 +1,3 @@
-"""What is a blockchain? 
-essentially, a blockchain is a public database that irreversibly documents and authenticates the possession and transmission of digital assets. 
-Digital currencies, like Bitcoin and Ethereum, are based on this concept. 
-Blockchain is an exciting technology that you can use to transform the capabilities of your applications."""
-
 
 #A blockchain comprises of several blocks that are joined to each other
 #The chaining of blocks takes place such that if one block is tampered with, the rest of the chain becomes invalid
