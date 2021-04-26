@@ -14,7 +14,8 @@ class Block:
         self.data = data
         self.timestamp = timestamp or time.time()
 
-    @property
+        
+   #property
 #Calculate_hash, will generate the hash of the blocks using the above values.
 #The SHA-256 module is imported into the project to assist in obtaining the hashes of the blocks.
 
@@ -23,6 +24,7 @@ class Block:
 
         return hashlib.sha256(block_of_string.encode()).hexdigest()
 
+    
     def __repr__(self):
         return "{} - {} - {} - {} - {}".format(self.index, self.proof_no, self.prev_hash, self.data,self.timestamp)
 
@@ -52,6 +54,7 @@ self.chain—this variable keeps all blocks;
 self.current_data—this variable keeps all the completed transactions in the block;
 self.construct_genesis()—this method will take care of constructing the initial block.
 """
+
 
 def construct_genesis(self):
         self.construct_block(proof_no=0, prev_hash=0)
@@ -90,7 +93,7 @@ self.chain.append()—this method joins newly constructed blocks to the chain;
 return—lastly, a constructed block object is returned
 """
 
-@staticmethod
+#staticmethod
 #The check_validity method is important in assessing the integrity of the blockchain and ensuring anomalies are absent.
 #This check_validity method uses if statements to check whether the hash of every block is correct.
 def check_validity(block, prev_block):
@@ -122,7 +125,8 @@ def new_data(self, sender, recipient, quantity):
         return True
 
 
-@staticmethod
+    
+#staticmethod
 def proof_of_work(last_proof):
 
 #Proof of work is a concept that prevents the blockchain from abuse. Simply, its objective is to identify a number that solves a problem after a certain amount of computing work is done.
@@ -139,7 +143,7 @@ def proof_of_work(last_proof):
 
         return proof_no
 
-@staticmethod
+#staticmethod
 def verifying_proof(last_proof, proof):
         #verifying the proof: does hash(last_proof, proof) contain 4 leading zeroes?
 
@@ -148,7 +152,7 @@ def verifying_proof(last_proof, proof):
         return guess_hash[:4] == "0000"
 
 
-@property
+#property
 
 #The latest_block method is a helper method that assists in obtaining the last block in the blockchain.
 #Remember that the last block is actually the current block in the chain.
@@ -177,7 +181,7 @@ def create_node(self, address):
         self.nodes.add(address)
         return True
 
-@staticmethod
+#staticmethod
 def obtain_block_object(block_data):
         #obtains block object from the block data
 
