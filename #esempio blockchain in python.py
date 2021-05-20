@@ -4,7 +4,6 @@
 import hashlib
 import time
 
-
 class Block:
 
     def __init__(self, index, proof_no, prev_hash, data, timestamp=None):
@@ -54,7 +53,6 @@ self.chain—this variable keeps all blocks;
 self.current_data—this variable keeps all the completed transactions in the block;
 self.construct_genesis()—this method will take care of constructing the initial block.
 """
-
 
 def construct_genesis(self):
         self.construct_block(proof_no=0, prev_hash=0)
@@ -162,11 +160,13 @@ def latest_block(self):
 
 def block_mining(self, details_miner):
 
+    
         self.new_data(
             sender="0",  #it implies that this node has created a new block
             receiver=details_miner,
             quantity=1)  #creating a new block (or identifying the proof number) is awarded with 1
 
+        
         last_block = self.latest_block
 
         last_proof_no = last_block.proof_no
@@ -181,6 +181,7 @@ def create_node(self, address):
         self.nodes.add(address)
         return True
 
+    
 #staticmethod
 def obtain_block_object(block_data):
         #obtains block object from the block data
