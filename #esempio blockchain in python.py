@@ -13,8 +13,7 @@ class Block:
         self.data = data
         self.timestamp = timestamp or time.time()
 
-        
-   #property
+#property
 #Calculate_hash, will generate the hash of the blocks using the above values.
 #The SHA-256 module is imported into the project to assist in obtaining the hashes of the blocks.
 
@@ -40,7 +39,6 @@ data—this gives a record of all transactions completed, such as the quantity b
 timestamp—this places a timestamp for the transactions.
 """               
 
-
 class BlockChain:
 
     def __init__(self):
@@ -56,7 +54,6 @@ self.construct_genesis()—this method will take care of constructing the initia
 
 def construct_genesis(self):
         self.construct_block(proof_no=0, prev_hash=0)
-
 
 """
 The blockchain requires a construct_genesis method to build the initial block in the chain. In the blockchain convention, this block is special because it symbolizes the start of the blockchain.
@@ -121,9 +118,7 @@ def new_data(self, sender, recipient, quantity):
             'recipient': recipient,
             'quantity': quantity})
         return True
-
-
-    
+   
 #staticmethod
 def proof_of_work(last_proof):
 
@@ -148,7 +143,6 @@ def verifying_proof(last_proof, proof):
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
         return guess_hash[:4] == "0000"
-
 
 #property
 
