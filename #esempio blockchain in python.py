@@ -1,5 +1,5 @@
-## A blockchain comprises of several blocks that are joined to each other
-## The chaining of blocks takes place such that if one block is tampered with, the rest of the chain becomes invalid
+# A blockchain comprises of several blocks that are joined to each other.
+# The chaining of blocks takes place such that if one block is tampered with, the rest of the chain becomes invalid.
 
 import hashlib
 import time
