@@ -13,9 +13,9 @@ class Block:
         self.data = data
         self.timestamp = timestamp or time.time()
 
-#property
-#Calculate_hash, will generate the hash of the blocks using the above values.
-#The SHA-256 module is imported into the project to assist in obtaining the hashes of the blocks.
+//Property
+//Calculate_hash, will generate the hash of the blocks using the above values.
+//The SHA-256 module is imported into the project to assist in obtaining the hashes of the blocks.
 
     def calculate_hash(self):
         block_of_string = "{}{}{}{}{}".format(self.index, self.proof_no, self.prev_hash, self.data,self.timestamp)
@@ -154,9 +154,9 @@ def block_mining(self, details_miner):
 
     
         self.new_data(
-            sender="0",  #it implies that this node has created a new block
+            sender="0",  //it implies that this node has created a new block
             receiver=details_miner,
-            quantity=1)  #creating a new block (or identifying the proof number) is awarded with 1
+            quantity=1)  //creating a new block (or identifying the proof number) is awarded with 1
 
         
         last_block = self.latest_block
