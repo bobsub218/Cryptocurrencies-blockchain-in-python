@@ -1,5 +1,5 @@
-# A blockchain comprises of several blocks that are joined to each other.
-# The chaining of blocks takes place such that if one block is tampered with, the rest of the chain becomes invalid.
+// A blockchain comprises of several blocks that are joined to each other.
+// The chaining of blocks takes place such that if one block is tampered with, the rest of the chain becomes invalid.
 
 import hashlib
 import time
@@ -88,9 +88,10 @@ self.chain.append()—this method joins newly constructed blocks to the chain;
 return—lastly, a constructed block object is returned
 """
 
-#staticmethod
-#The check_validity method is important in assessing the integrity of the blockchain and ensuring anomalies are absent.
-#This check_validity method uses if statements to check whether the hash of every block is correct.
+// Staticmethod
+// The check_validity method is important in assessing the integrity of the blockchain and ensuring anomalies are absent.
+// This check_validity method uses if statements to check whether the hash of every block is correct.
+
 def check_validity(block, prev_block):
         if prev_block.index + 1 != block.index:
             return False
@@ -107,11 +108,9 @@ def check_validity(block, prev_block):
 
         return True
 
-#The new_data method is used for adding the data of transactions to a block. It’s a very simple method: it accepts three parameters
+// The new_data method is used for adding the data of transactions to a block. It’s a very simple method: it accepts three parameters and append the transaction data to self.current_data list
+//Once the transaction data has been added to the list, the index of the next block to be created is returned
 
-#and append the transaction data to self.current_data list
-
-#Once the transaction data has been added to the list, the index of the next block to be created is returned
 def new_data(self, sender, recipient, quantity):
         self.current_data.append({
             'sender': sender,
@@ -119,11 +118,11 @@ def new_data(self, sender, recipient, quantity):
             'quantity': quantity})
         return True
    
-#staticmethod
+//Staticmethod
 def proof_of_work(last_proof):
 
-#Proof of work is a concept that prevents the blockchain from abuse. Simply, its objective is to identify a number that solves a problem after a certain amount of computing work is done.
-#If the difficulty level of identifying the number is high, it discourages spamming and tampering with the blockchain.
+// Proof of work is a concept that prevents the blockchain from abuse. Simply, its objective is to identify a number that solves a problem after a certain amount of computing work is done.
+// If the difficulty level of identifying the number is high, it discourages spamming and tampering with the blockchain.
 
 
         '''this simple algorithm identifies a number f' such that hash(ff') contain 4 leading zeroes
@@ -136,18 +135,17 @@ def proof_of_work(last_proof):
 
         return proof_no
 
-#staticmethod
+//Staticmethod
 def verifying_proof(last_proof, proof):
-        #verifying the proof: does hash(last_proof, proof) contain 4 leading zeroes?
+        //verifying the proof: does hash(last_proof, proof) contain 4 leading zeroes?
 
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
         return guess_hash[:4] == "0000"
 
-#property
-
-#The latest_block method is a helper method that assists in obtaining the last block in the blockchain.
-#Remember that the last block is actually the current block in the chain.
+//Property
+//The latest_block method is a helper method that assists in obtaining the last block in the blockchain.
+//Remember that the last block is actually the current block in the chain.
 
 def latest_block(self):
         return self.chain[-1]
@@ -176,9 +174,9 @@ def create_node(self, address):
         return True
 
     
-#staticmethod
+//Staticmethod
 def obtain_block_object(block_data):
-        #obtains block object from the block data
+        //obtains block object from the block data
 
         return Block(
             block_data['index'],
